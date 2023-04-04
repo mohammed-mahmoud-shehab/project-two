@@ -1,0 +1,566 @@
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-right: 0px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: "work sans" "sans-serif";
+}
+/* تنسيق الشاشة في جميع الاحجام */
+
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* هذا المقاس للشاشات الصغيرة*/
+@media  (min-width:768px){
+    .container{
+        width: 750px;
+    }
+}
+/* هذا المقاس للشاشات المتوسطة*/
+@media  (min-width:992px){
+    .container{
+        width: 992px;
+    }
+}
+/* هذا المقاس للشاشات الكبيرة*/
+@media  (min-width:1200px){
+    .container{
+        width: 1200px;
+    }
+}
+
+.special-heading{
+    color: #ebeced;
+    font-size: 100px;
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: -3px;
+    margin: 0;
+}
+.special-heading + p{
+    margin: -30px 0 0;
+    font-size: 20px;
+    text-align: center;
+    color: #797979;
+}
+@media (max-width: 767px){
+    .special-heading{
+        font-size: 60px;
+    }
+    .special-heading + p{
+        margin: -20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.header{
+    padding: 20px;
+}
+/* لعمل الثلاث شرط اللي علي جنب وعمل تالقائمة */
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo {
+    width: 60px;
+}
+.header .links {
+    position: relative;
+}
+.header .links:hover .icon span:nth-child(2){
+    width: 100%;
+}
+.header .links .icon {
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.header .links .icon span{
+background-color: #333;
+margin-bottom: 5px;
+height: 2px;
+}
+.header .links .icon span:first-child{
+    height: 3px;
+    width: 100%;
+}
+.header .links .icon span:nth-child(2){
+    height: 3px;
+    width: 50%;
+    transition: .3s;
+}
+.header .links .icon span:last-child{
+    height: 3px;
+    width: 100%;
+}
+/* التحكم في عناصر القائمة */
+.header .links ul{ 
+    margin: 0;
+    padding: 0;
+    background-color: #f6f6f6;
+    position: absolute;
+    right: 0;
+    min-width: 200px;
+    top:calc(100% + 15px);
+    display: none;
+    z-index: 1;
+    list-style: none;
+}
+.header .links:hover ul {
+     display: block;
+}
+/* لعمل السهم اللي اعلا القائمة */
+.header .links .ul::before{ 
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color:transparent transparent #ddd transparent;
+    position: absolute;
+    right: 5px;
+    top: -20px;
+}
+.header .container .links ul li a{
+    padding: 20px;
+    display: block;
+    text-decoration: none;
+    color: #333;
+    transition: .3s;
+}
+.header .container .links ul li a:hover{
+    padding-left: 30px;
+}
+.header .container .links ul li:not(:last-child) a{
+    border: 1px solid #ddd;
+}
+:root{
+    --main-color:#10cab7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.landing {
+    background-image: url(photo/landing.jpg);
+    background-size: cover; 
+    height: calc(100vh - 80px);
+    position: relative;
+}
+.landing .introtext {
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    max-width:  100%;
+}
+.landing .introtext h1 {
+    color: #10cab7; 
+    font-size: 50px;
+    font-weight: bold;
+}
+.landing .introtext p {
+    line-height: 1.8;
+    font-size: 19px;
+}
+
+
+
+
+
+
+
+
+
+
+.features {
+    padding-bottom: 60px;
+    padding-top: 60px;
+    background-color: #f6f6f6;
+}
+.features .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+.features .feat{
+    padding: 20px;
+    text-align: center;
+}
+.features .feat i{
+    background-color: #10cab7;
+}
+.features .feat h3{
+    font-weight: 800;
+    margin: 30px 0;
+}
+.features .feat p{
+    line-height: 1.8;
+    color: #777;
+    font-size: 17px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.services{
+    padding-bottom: 60px;
+    padding-top: 60px;
+}
+.services .services-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
+    grid-gap:30px;
+    margin-top: 100px;
+    /* position: relative; */
+    /* right: -100px; */
+}
+.services .services-content .srv{
+    display: flex;
+    margin-bottom: 40px;
+}
+@media (max-width:767px){
+    .services .services-content .srv{
+        flex-direction: column;
+        text-align: center;
+        padding-right: 40px;
+    }
+}
+.services .services-content .srv i{
+    /* علي شان تتعامل مع الايكونات كطول وعرض علي حسب حجم الصفحة 
+    يعني ممكن تضع الايكونة في الجنب او فوق الكلام توافق اتوماتيك */
+    flex-basis: 60px;
+    color: #10cab7;
+}
+.services .services-content .srv .text{
+    flex: 1;
+}
+.services .services-content .srv .text h3{
+    margin: 0 0 20px;
+}
+.services .services-content .srv .text p{
+    color: #444;
+    font-weight: 300;
+    line-height: 1.6;
+}
+.services .services-content .image{
+    text-align: center;
+    position: relative;
+}
+.services .services-content .image img{
+    width: 260px;
+}
+.services .services-content .image::before{    
+    content: "";
+    background-color: #2c4755;
+    width: 100px;
+    height: calc(100% + 100px);
+    top: -50px;
+    right: 0;
+    z-index: -1;
+    position: absolute;
+} 
+@media (max-width: 1199px){
+    .image-column{
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.protflio{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #f6f6f6;
+}
+.protflio .protflio-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    grid-gap: 30px;
+    margin-top: 80px;
+}
+.protflio .protflio-content .card{
+    background-color: wheat;
+}
+.protflio .protflio-content .card img{
+    max-width:100%;
+}
+.protflio .protflio-content .card .info{
+    padding: 20px;
+}
+.protflio .protflio-content .card .info h3{
+    margin: 0;
+}
+.protflio .protflio-content .card .info p{
+    color: #777;
+    line-height: 1.6;
+    margin-bottom: 0;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.about{    
+    padding-top: 60px;
+    padding-bottom: calc(60px + 60px);
+}
+.about-content {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+@media (max-width:991px) {
+    .about .about-content{
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.about-content .image{
+    position: relative;
+    width: 250px;
+    height: 375;
+}
+@media (max-width:991px) {
+    .about-content .image{
+        margin: 0 auto 60px;
+    }
+}
+.about-content .image::before{
+    content: "";
+    position: absolute;
+    background-color: #ebeced;
+    width: 100px;
+    height: calc(100% + 80px);
+    top: -40px;
+    left: -20px;
+    z-index: -1;
+}
+.about-content .image::after{
+    content: "";
+    
+    position: absolute;
+    width: 120px;
+    height: 300px;
+    top: -40px;
+    border-left: 80px solid #10cab7;
+    border-bottom: 80px solid #10cab7;
+    z-index: -1;
+    right: -150px;
+}
+@media (max-width:991px) {
+    .about-content .image::before,
+    .about-content .image::after{
+        display: none;
+    }
+}
+.about-content .image img{
+    max-width: 100%;
+}
+.about .text{
+    flex-basis: calc(100% - 500px);
+}
+.about .text p:first-of-type{
+    font-weight: bold;
+    line-height: 2;
+    margin-bottom: 50px;
+}
+.about .text hr{
+    width: 50%;
+    display: inline-block;
+    border-color: #10cab7;
+}
+.about .text p:last-of-type{
+    line-height: 2;
+    color: #777;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contact{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #f6f6f6;
+}
+.contact .info{
+    
+    padding-top: 60px;
+    padding-bottom: 60px;
+    text-align: center;
+}
+.contact .info .label{
+    font-size: 35px;
+    font-weight: 800;
+    color: #2c4755;
+    letter-spacing: -2px;
+    margin-bottom:20px ;
+}
+.contact .info .link{
+    display: block;
+    font-size: 35px;
+    font-weight: 800;
+    color: #10cab7;
+    text-decoration: none;
+}
+.contact .info .social{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 16px;
+}
+.contact .info .social i{
+    margin-left: 10px;
+    color: #10cab7;
+}
+@media(max-width:767px){
+    .contact .info .label,
+    .contact .info .link{
+        font-size: 25px;
+    }
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footar{
+    background-color: #2c4755;
+    color: #ebeced;
+    padding: 30px;
+    text-align: center;
+    font-size: 18px;
+}
+.footar span{
+    font-weight: bold;
+    color: #10cab7;
+}  
